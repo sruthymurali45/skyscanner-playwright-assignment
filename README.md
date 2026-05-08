@@ -38,3 +38,7 @@ It validates flight search functionality on Skyscanner by performing end-to-end 
 npm install
 npx playwright test
 npx playwright test --headed
+
+## CI Limitation
+Skyscanner's bot protection blocks headless browsers 
+on GitHub Actions. Tests are verified locally on Chrome.
