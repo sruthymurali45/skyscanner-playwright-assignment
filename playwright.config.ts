@@ -48,11 +48,29 @@ export default defineConfig({
     },
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        browserName: 'firefox',
+        viewport: null,
+        launchOptions: {
+          args:['--start-maximized',
+                '--window-size=1920,1080',
+                '--disable-blink-features=AutomationControlled'
+              ],
+        },
+      },
     },
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: {
+        browserName: 'webkit',
+        viewport: null,
+        launchOptions: {
+          args:['--start-maximized',
+                '--window-size=1920,1080',
+                '--disable-blink-features=AutomationControlled'
+              ],
+        },
+      },
     },
   ],
 
