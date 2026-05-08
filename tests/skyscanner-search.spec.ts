@@ -3,8 +3,12 @@ import { HomePage } from '../pages/HomePage';
 import { ResultsPage } from '../pages/SearchResultsPage';
 import { TestDataLoader } from '../utils/TestDataLoader';
 import { DateUtils } from '../utils/DateUtils';
+import { SearchTestData } from '../types/SearchTestData';
 
-const testData = TestDataLoader.load();
+const testData =
+  TestDataLoader.load<SearchTestData>(
+    'searchData.json'
+  );
 
 // One shared browser context — avoids CAPTCHA on every test
 let context: BrowserContext;
@@ -20,7 +24,7 @@ test.afterAll(async () => {
 });
 
 for (const data of testData) {
-  test(`[${data.id}] Search ${data.from} → ${data.to}`, async () => {
+  test(`[${data.id}] Search ${data.from} → ${data.to}`, async ({page}) => {
     const today = DateUtils.getToday();
     const fromDate = DateUtils.applyOffset(today, data.fromOffset);
     const toDate = DateUtils.applyOffset(today, data.toOffset);

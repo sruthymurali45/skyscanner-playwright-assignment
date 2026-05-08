@@ -33,7 +33,7 @@ export class HomePage {
     const input = this.page.locator('input[name="originInput-search"]');
     await input.click();
     await input.fill('');
-    await input.pressSequentially(city, { delay: 80 });
+    await input.fill(city);
     await this.page.waitForFunction(() => {
       return document.querySelectorAll('[role="option"]').length > 0;
     }, { timeout: 10000 });
@@ -46,7 +46,7 @@ export class HomePage {
     console.log(`Entering TO: ${city}`);
     const input = this.page.locator('input[name="destinationInput-search"]');
     await input.fill('');
-    await input.pressSequentially(city, { delay: 100 });
+    await input.fill(city);
     await this.page.waitForFunction(() => {
       return document.querySelectorAll('[role="option"]').length > 0;
     }, { timeout: 10000 });
