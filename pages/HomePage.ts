@@ -8,6 +8,7 @@ export class HomePage {
   async open() {
     await this.page.goto(ENV.baseUrl, { waitUntil: 'domcontentloaded' });
     await this.handleCaptcha();
+    await this.dismissPopupAutomatically();
     await this.page.waitForSelector('input[name="originInput-search"]', {
       state: 'visible',
       timeout: 15000,
@@ -25,6 +26,19 @@ export class HomePage {
       console.log('CAPTCHA solved! Continuing...');
       await this.page.waitForTimeout(1000);
     }
+  }
+
+  async dismissPopupAutomatically(): Promise<void> {
+    this.page.on('dialog', dialog => dialog.dismiss());
+    
+    // watches continuously in background
+    this.page.addLocatorHandler(
+      this.page.locator('button[aria-label="Close modal"]'),
+      async () => {
+        await this.page.locator('button[aria-label="Close modal"]').click();
+        console.log('Popup auto-closed');
+      }
+    );
   }
 
   // Select from city

@@ -18,7 +18,7 @@ Error: Channel closed
 ```
 Error: page.waitForSelector: Target page, context or browser has been closed
 Call log:
-  - waiting for locator('#resultsContainer') to be visible
+  - waiting for locator('#dayview-first-result') to be visible
 
 ```
 
