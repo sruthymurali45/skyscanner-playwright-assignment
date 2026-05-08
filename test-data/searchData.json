@@ -1,0 +1,18 @@
+[
+  {
+    "id": "TC001",
+    "from": "New York",
+    "to": "Sydney",
+    "fromOffset": { "days": 0 },
+    "toOffset": { "days": 7 },
+    "guests": 3
+  },
+  {
+    "id": "TC002",
+    "from": "Boston",
+    "to": "Amsterdam",
+    "fromOffset": { "days": 10 },
+    "toOffset": { "months": 1 },
+    "guests": 5
+  }
+]
