@@ -20,7 +20,9 @@ test.beforeAll(async ({ browser }) => {
 });
 
 test.afterAll(async () => {
-  await context.close();
+  if(context){
+      await context.close();
+  }
 });
 
 for (const data of testData) {

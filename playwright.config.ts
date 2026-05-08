@@ -16,7 +16,7 @@ export default defineConfig({
 
   use: {
     baseURL: 'https://www.skyscanner.com',
-    headless: false,
+    headless: true,
     viewport: null,
     locale: 'en-US',
     // timezoneId: 'America/New_York',
