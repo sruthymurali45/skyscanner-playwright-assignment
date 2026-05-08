@@ -16,7 +16,7 @@ export default defineConfig({
 
   use: {
     baseURL: 'https://www.skyscanner.com',
-    headless: true,
+    headless: false,
     viewport: null,
     locale: 'en-US',
     // timezoneId: 'America/New_York',
@@ -36,7 +36,8 @@ export default defineConfig({
     {
       name: 'chromium',
       use: {
-        ...devices['Desktop Chrome'],
+        browserName: 'chromium',
+        viewport: null,
         launchOptions: {
           args:['--start-maximized',
                 '--window-size=1920,1080',

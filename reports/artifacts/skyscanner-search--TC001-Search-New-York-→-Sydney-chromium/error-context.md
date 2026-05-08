@@ -7,7 +7,7 @@
 # Test info
 
 - Name: skyscanner-search.spec.ts >> [TC001] Search New York → Sydney
-- Location: tests/skyscanner-search.spec.ts:27:7
+- Location: tests/skyscanner-search.spec.ts:29:7
 
 # Error details
 
@@ -18,7 +18,7 @@ Error: Channel closed
 ```
 Error: page.waitForSelector: Target page, context or browser has been closed
 Call log:
-  - waiting for locator('#dayview-first-result') to be visible
+  - waiting for locator('#resultsContainer') to be visible
 
 ```
 
